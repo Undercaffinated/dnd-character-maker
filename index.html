@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <title>Character Helper</title>
+        <meta charset="utf-8">
+        <meta content="width=device-width initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+                   
+<body>
+    <main>
+        <h1>Character Creator</h1>
+        <div class="inline">
+            <p>For a complete breakdown of the character building process, <a href="https://www.dndbeyond.com/sources/basic-rules/step-by-step-characters">Click Here</a></p>
+        </div>
+        <fieldset>
+            <h2>Step 1: Basic Info</h2>
+            <p class="instructions">Fill in the basic info for the character.</p>
+        
+            <!--Character Class-->
+            <label class="basic-info" for="character-class">Character Class: 
+                <select id="character-class" name="character-class">
+                    <option value="artificer">Artificer</option>
+                    <option value="barbarian">Barbarian</option>
+                    <option value="bard">Bard</option>
+                    <option value="cleric">Cleric</option>
+                    <option value="druid">Druid</option>
+                    <option value="fighter">Fighter</option>
+                    <option value="monk">Monk</option>
+                    <option value="paladin">Paladin</option>
+                    <option value="ranger">Ranger</option>
+                    <option value="rogue">Rogue</option>
+                    <option value="sorceror">Sorceror</option>
+                    <option value="warlock">Warlock</option>
+                    <option value="wizard">Wizard</option>
+                </select>
+            </label>
+
+            <!--Character Race-->
+            <label class="basic-info" for="character-race">Character Race: 
+                <select id="character-race" name="character-race">
+                    <option value="dragonborn">Dragonborn</option>
+                    <option value="dwarf">Dwarf</option>
+                    <option value="elf">Elf</option>
+                    <option value="gnome">Gnome</option>
+                    <option value="half-elf">Half-Elf</option>
+                    <option value="halfling">Halfling</option>
+                    <option value="half-orc">Half-Orc</option>
+                    <option value="human">Human</option>
+                    <option value="tiefling">Tiefling</option>
+                    <!--Something Else-->
+                </select>
+            </label>
+            <label class="basic-info">Character Level: 
+                <input type="number" min="1" max="20" placeholder="1">
+            </label>
+
+            <!--Character Background - p.125 Player's Handbook-->
+            <label class="basic-info">Character Background:
+                <select>
+                    <option value="no-background">No Background</option>
+                    <option value="acolyte">Acolyte</option>
+                    <option>Charlatan</option>
+                    <option>Criminal</option>
+                    <option>Entertainer</option>
+                    <option>Folk Hero</option>
+                    <option>Guild Artisan</option>
+                    <option>Hermit</option>
+                    <option>Noble</option>
+                    <option>Outlander</option>
+                    <option>Sage</option>
+                    <option>Sailor</option>
+                    <option>Soldier</option>
+                    <option>Urchin</option>
+                    <option>Custom</option>
+                </select>
+            </label>
+            <div class="inline">
+                <p class="basic-info">Want it done now?: <input type="button" value="Finish For Me"/></p>
+            </div>
+            <p class="instructions">For more information, visit the DnD Beyond Site:
+                <a href="https://www.dndbeyond.com/classes">Classes</a>
+                <a href="https://www.dndbeyond.com/races">Races</a>
+                <a href="https://www.dndbeyond.com/backgrounds">Backgrounds</a>
+            </p>
+        </fieldset>
+
+        <fieldset class="stats">
+            <h2>Step 2: Ability Scores</h2>
+            <p class="instructions">This section will help you determine what your character's ability scores should be.</p>
+            <div class="substep">
+                <h3>Step 2.1</h3>
+                <p class="instructions">Choose one of the below methods to determine level 1 ability scores. For more info, <a href="https://www.dndbeyond.com/sources/basic-rules/step-by-step-characters#3DetermineAbilityScores">Click Here</a></p>
+                <div class="inline">
+                    <label for="initial-stat-system">Rolling Dice: 
+                        <select id="initial-stat-system" name="initial-stat-system">
+                            <option value="standard-roll">Standard Roll (4d6 - Lowest)</option>
+                            <option value="carolyne-roll">Carolyne Roll (5d6 - Lowest Two)</option>
+                        </select>
+                    </label>
+        
+                    <label for="roll-button">
+                        <input type="button" value="Roll!"/>
+                    </label>
+                    <label for="roll-results">Roll Results: <em>OUTPUT OF ROLL</em></label>
+                </div>
+
+                <div>
+                    <p>Standard Spread: 15, 14, 13, 12, 10, 8</p>
+                    <!--
+                        <option value="standard-spread">Standard Spread</option>
+                        <option value="point-buy">Point Buy</option>
+                        <option value="custom">Manually Assign</option>
+                    -->
+                </div>
+
+                <div>
+                    <p>Point-Buy: To use the Point-Buy system, set all of the values in the "Manually Assign Ability Scores boxes to 8. According to <a href="https://www.dndbeyond.com/sources/basic-rules/step-by-step-characters#AbilityScorePointCost">D&D Beyond</a> you get 27 points to spend on upgrading your scores. Each ability score increase above 8 costs one point and each ability score increase above 13 costs two. You are only allowed to go up to a score of 15 this way.</p>
+                </div>
+
+                <div>
+                    <p class="instructions">Manually Assign Ability Scores: </p>
+                    <div class="flex">
+                        <label>Strength: <input type="number" min="1" max="18" placeholder="0"/></label>
+                        <label>Dexterity: <input type="number" min="1" max="18" placeholder="0"/></label>
+                        <label>Constitution: <input type="number" min="1" max="18" placeholder="0"/></label>
+                        <label>Intelligence: <input type="number" min="1" max="18" placeholder="0"/></label>
+                        <label>Wisdom: <input type="number" min="1" max="18" placeholder="0"/></label>
+                        <label>Charisma: <input type="number" min="1" max="18" placeholder="0"/></label>
+                        <input type="button" value="Update" />
+                    </div>
+                </div>
+            </div>
+
+            <div class="substep">
+                <h3>Step 2.2</h3>
+                <p>Now we'll add in the bonuses you get from your character race and level.</p>
+                <p>Since you chose ################# as your race you get: JS OUTPUT RACIAL ABILITY SCORE BONUSES</p>
+                <p>In D&D, at levels 4, 8, 12, 16, and 19, you get some nifty bonuses along with your normal level up. At each of these levels, you are awarded two "Ability Score Bonus Points" which can be added to whichever Ability Score you desire. The only rule is that you are not allowed to go above 20 this way.</p>
+                <p>Because D&D hates you, there is exactly one exception. Fighters get an additional 2 bonus points at levels 6 and 14. Don't ask me why. It's probably because they suck.</p>
+                <p>For example, a level 5 character is at least level 4, so they get 2 Bonus Points. A level 17 character gets 8.</p>
+                <p>Since you are level ##, you get ## bonus points to add to your ability scores which you can assign any way you want. You may also exchange 2 bonus points for a feat instead. If you do this, don't forget to add your new feat to your character sheet!</p>
+                <label>How many feats you took:
+                    <input type="number" min="0" max="4" placeholder="0"/>
+                </label>
+                <p>Use these boxes to allot your bonus points:</p>
+                <div class="flex">
+                    <label>Strength: <input type="number" min="1" max="10" placeholder="0"/></label>
+                    <label>Dexterity: <input type="number" min="1" max="10" placeholder="0"/></label>
+                    <label>Constitution: <input type="number" min="1" max="10" placeholder="0"/></label>
+                    <label>Intelligence: <input type="number" min="1" max="10" placeholder="0"/></label>
+                    <label>Wisdom: <input type="number" min="1" max="10" placeholder="0"/></label>
+                    <label>Charisma: <input type="number" min="1" max="10" placeholder="0"/></label>
+                    <input type="button" value="Update" />
+                </div>
+                
+            </div>
+
+            <div class="substep">
+                <h3>Step 2.3</h3>
+                <p>Finally, after all of that, these are the numbers you should copy onto your character sheet: </p>
+                <div class="ability-scores">
+                    <div class="grid-item str">Strength</div>
+                    <div class="grid-item dex">Dexterity</div>
+                    <div class="grid-item con">Constitution</div>
+                    <div class="grid-item int">Intelligence</div>
+                    <div class="grid-item wis">Wisdom</div>
+                    <div class="grid-item cha">Charisma</div>
+                    <div class="grid-item str-mod">Strength Modifier</div>
+                    <div class="grid-item dex-mod">Dexterity Modifier</div>
+                    <div class="grid-item con-mod">Constitution Modifier</div>
+                    <div class="grid-item int-mod">Intelligence Modifier</div>
+                    <div class="grid-item wis-mod">Wisdom Modifier</div>
+                    <div class="grid-item cha-mod">Charisma Modifier</div>
+                </div>
+                <p class="small-print">*Modifiers are taken from a table located <a href="https://www.dndbeyond.com/sources/basic-rules/step-by-step-characters#AbilityScoresandModifiers">here</a></p>
+                <p>Until I learn JavaScript and can make the above feature useful, you can use these to hold onto your numbers: </p>
+                <div class="flex">
+                    <label>Strength: <input type="number" min="1" max="20" placeholder="0"/></label>
+                    <label>Dexterity: <input type="number" min="1" max="20" placeholder="0"/></label>
+                    <label>Constitution: <input type="number" min="1" max="20" placeholder="0"/></label>
+                    <label>Intelligence: <input type="number" min="1" max="20" placeholder="0"/></label>
+                    <label>Wisdom: <input type="number" min="1" max="20" placeholder="0"/></label>
+                    <label>Charisma: <input type="number" min="1" max="20" placeholder="0"/></label>
+                    <input type="button" value="Update" />
+                </div>
+                <p>Use the table <a href="https://www.dndbeyond.com/sources/basic-rules/step-by-step-characters#AbilityScoresandModifiers">here</a>to get your modifiers. I can't be bothered to do the copy/paste for you.</p>
+            </div>
+
+        </fieldset>
+
+        <fieldset>
+            <h2>Step 3: Proficiency Bonus, Skills, and Saving Throws</h2>
+            <p class="instruction">This section will help you fill in the Proficiency Bonus, Saving Throws, and Skills Boxes on your character sheet.</p>
+        </fieldset>
+
+        <fieldset>
+            <h2>Spells</h2>
+        </fieldset>
+
+        <fieldset>
+            <h2>Equipment</h2>
+        </fieldset>
+
+        <fieldset class="flavor">
+            <h2>Character Flavor</h2>
+            <!--Gender(?)-->
+            <!--Age-->
+            <!--Height-->
+            <!--Weight-->
+            <!--Eye Color-->
+            <!--Skin Qualities-->
+            <!--Hair Color-->
+            <!--Etc-->
+        </fieldset>
+
+        <!--Everything Else: Provides Info on how to fill in character sheet with everything this app can't generate-->
+        <fieldset>
+            <h2>Everything Else</h2>
+        </fieldset>
+    </main>
+
+    <footer>
+    </footer>
+</body>
+                   
+
+</html>
+
+
