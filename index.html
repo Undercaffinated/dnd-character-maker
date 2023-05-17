@@ -21,7 +21,7 @@
         
             <!--Character Class-->
             <label class="basic-info" for="character-class">Character Class: 
-                <select id="character-class" name="character-class">
+                <select id="character-class" name="character-class" onchange="handleCharacterClassChange()">
                     <option value="artificer">Artificer</option>
                     <option value="barbarian">Barbarian</option>
                     <option value="bard">Bard</option>
@@ -40,7 +40,7 @@
 
             <!--Character Race-->
             <label class="basic-info" for="character-race">Character Race: 
-                <select id="character-race" name="character-race">
+                <select id="character-race" name="character-race" onchange="handleCharacterRaceChange()">
                     <option value="dragonborn">Dragonborn</option>
                     <option value="dwarf">Dwarf</option>
                     <option value="elf">Elf</option>
@@ -54,31 +54,31 @@
                 </select>
             </label>
             <label class="basic-info">Character Level: 
-                <input type="number" min="1" max="20" placeholder="1">
+                <input type="number" id="character-level" min="1" max="20" placeholder="1" onchange="handleCharacterLevelChange()">
             </label>
 
             <!--Character Background - p.125 Player's Handbook-->
-            <label class="basic-info">Character Background:
-                <select>
+            <label for="character-background" class="basic-info">Character Background:
+                <select id="character-background" name="character-background" onchange="handleCharacterBackgroundChange()">
                     <option value="no-background">No Background</option>
                     <option value="acolyte">Acolyte</option>
-                    <option>Charlatan</option>
-                    <option>Criminal</option>
-                    <option>Entertainer</option>
-                    <option>Folk Hero</option>
-                    <option>Guild Artisan</option>
-                    <option>Hermit</option>
-                    <option>Noble</option>
-                    <option>Outlander</option>
-                    <option>Sage</option>
-                    <option>Sailor</option>
-                    <option>Soldier</option>
-                    <option>Urchin</option>
-                    <option>Custom</option>
+                    <option value="charlatan">Charlatan</option>
+                    <option value="criminal">Criminal</option>
+                    <option value="entertainer">Entertainer</option>
+                    <option value="folk-hero">Folk Hero</option>
+                    <option value="guild-artisan">Guild Artisan</option>
+                    <option value="hermit">Hermit</option>
+                    <option value="noble">Noble</option>
+                    <option value="outlander">Outlander</option>
+                    <option value="sage">Sage</option>
+                    <option value="sailor">Sailor</option>
+                    <option value="soldier">Soldier</option>
+                    <option value="urchin">Urchin</option>
+                    <option value="custom">Custom</option>
                 </select>
             </label>
             <div class="inline">
-                <p class="basic-info">Want it done now?: <input type="button" value="Finish For Me"/></p>
+                <p class="basic-info">Want it done now?: <input type="button" value="Finish For Me" onclick="finishForMe()"/></p>
             </div>
             <p class="instructions">For more information, visit the DnD Beyond Site:
                 <a href="https://www.dndbeyond.com/classes">Classes</a>
@@ -94,17 +94,18 @@
                 <h3>Step 2.1</h3>
                 <p class="instructions">Choose one of the below methods to determine level 1 ability scores. For more info, <a href="https://www.dndbeyond.com/sources/basic-rules/step-by-step-characters#3DetermineAbilityScores">Click Here</a></p>
                 <div class="inline">
-                    <label for="initial-stat-system">Rolling Dice: 
-                        <select id="initial-stat-system" name="initial-stat-system">
-                            <option value="standard-roll">Standard Roll (4d6 - Lowest)</option>
-                            <option value="carolyne-roll">Carolyne Roll (5d6 - Lowest Two)</option>
+                    <label for="roll-system">Rolling Dice: 
+                        <select id="roll-system" name="roll-system" onchange="handleRollSystemChange()">
+                            <option id="harsh-roll" value="harsh-roll">Harsh Roll (3d6)</option>
+                            <option id="standard-roll" value="standard-roll">Standard Roll (4d6 - Lowest)</option>
+                            <option id="carolyne-roll" value="carolyne-roll">Carolyne Roll (5d6 - Lowest Two)</option>
                         </select>
                     </label>
         
                     <label for="roll-button">
-                        <input type="button" value="Roll!"/>
+                        <input type="button" id="roll-button" value="Roll!" onclick="makeAbilityScoreRoll()"/>
                     </label>
-                    <label for="roll-results">Roll Results: <em>OUTPUT OF ROLL</em></label>
+                    <label for="roll-results">Roll Results: <p class="inline" id="roll-results">OUTPUT OF ROLL</p></label>
                 </div>
 
                 <div>
@@ -224,6 +225,13 @@
 
     <footer>
     </footer>
+    <script src="javascript/handleCharacterClassChange.js"></script>
+    <script src="javascript/handleCharacterRaceChange.js"></script>
+    <script src="javascript/handleCharacterLevelChange.js"></script>
+    <script src="javascript/handleCharacterBackgroundChange.js"></script>
+    <script src="javascript/finishForMe.js"></script>
+    <script src="javascript/handleRollSystemChange.js"></script>
+    <script src="javascript/makeAbilityScoreRoll.js"></script>
 </body>
                    
 
