@@ -1,0 +1,30 @@
+In no particular order:
+
+
+- When the roll button in Step 2.1 is clicked, the numbers generated should
+auto-populate the stat dropdowns in Step 2.1
+
+
+- Change the names of steps from #.# to #.{a-z}
+
+- Step 2.1: Write a js function that can calculate based on some Ability Score
+array the correct number of Point Buy Points remain.
+    - Implement this solution so that it updates the textContent of
+    "Point-Buy-Points-Remaining" element in step 2.1
+
+
+- Starts a documentation page. Outline the logic on this thing.
+
+
+- Step 2b:
+    - Find a place to store each race's racial bonuses. Perhaps an array of js
+    objects?
+
+    - Design a js func that takes in a character level and class and outputs
+    the number of bonus points they should be able to add to their character's
+    stats and how many feats they can afford.
+
+    - Design a function that takes in the total number of bonus points a player
+    should be able to allocate to stats and the number of feats they  have
+    taken, and return both the number of bonus points they can still allocate
+    and/or the number of feats they can take.

@@ -22,34 +22,34 @@
             <!--Character Class-->
             <label class="basic-info" for="character-class">Character Class: 
                 <select id="character-class" name="character-class" onchange="handleCharacterClassChange()">
-                    <option value="artificer">Artificer</option>
-                    <option value="barbarian">Barbarian</option>
-                    <option value="bard">Bard</option>
-                    <option value="cleric">Cleric</option>
-                    <option value="druid">Druid</option>
-                    <option value="fighter">Fighter</option>
-                    <option value="monk">Monk</option>
-                    <option value="paladin">Paladin</option>
-                    <option value="ranger">Ranger</option>
-                    <option value="rogue">Rogue</option>
-                    <option value="sorceror">Sorceror</option>
-                    <option value="warlock">Warlock</option>
-                    <option value="wizard">Wizard</option>
+                    <option value="Artificer">Artificer</option>
+                    <option value="Barbarian">Barbarian</option>
+                    <option value="Bard">Bard</option>
+                    <option value="Cleric">Cleric</option>
+                    <option value="Druid">Druid</option>
+                    <option value="Fighter">Fighter</option>
+                    <option value="Monk">Monk</option>
+                    <option value="Paladin">Paladin</option>
+                    <option value="Ranger">Ranger</option>
+                    <option value="Rogue">Rogue</option>
+                    <option value="Sorceror">Sorceror</option>
+                    <option value="Warlock">Warlock</option>
+                    <option value="Wizard">Wizard</option>
                 </select>
             </label>
 
             <!--Character Race-->
             <label class="basic-info" for="character-race">Character Race: 
                 <select id="character-race" name="character-race" onchange="handleCharacterRaceChange()">
-                    <option value="dragonborn">Dragonborn</option>
-                    <option value="dwarf">Dwarf</option>
-                    <option value="elf">Elf</option>
-                    <option value="gnome">Gnome</option>
-                    <option value="half-elf">Half-Elf</option>
-                    <option value="halfling">Halfling</option>
-                    <option value="half-orc">Half-Orc</option>
-                    <option value="human">Human</option>
-                    <option value="tiefling">Tiefling</option>
+                    <option value="Dragonborn">Dragonborn</option>
+                    <option value="Dwarf">Dwarf</option>
+                    <option value="Elf">Elf</option>
+                    <option value="Gnome">Gnome</option>
+                    <option value="Half-Elf">Half-Elf</option>
+                    <option value="Halfling">Halfling</option>
+                    <option value="Half-Orc">Half-Orc</option>
+                    <option value="Human">Human</option>
+                    <option value="Tiefling">Tiefling</option>
                     <!--Something Else-->
                 </select>
             </label>
@@ -60,21 +60,21 @@
             <!--Character Background - p.125 Player's Handbook-->
             <label for="character-background" class="basic-info">Character Background:
                 <select id="character-background" name="character-background" onchange="handleCharacterBackgroundChange()">
-                    <option value="no-background">No Background</option>
-                    <option value="acolyte">Acolyte</option>
-                    <option value="charlatan">Charlatan</option>
-                    <option value="criminal">Criminal</option>
-                    <option value="entertainer">Entertainer</option>
-                    <option value="folk-hero">Folk Hero</option>
-                    <option value="guild-artisan">Guild Artisan</option>
-                    <option value="hermit">Hermit</option>
-                    <option value="noble">Noble</option>
-                    <option value="outlander">Outlander</option>
-                    <option value="sage">Sage</option>
-                    <option value="sailor">Sailor</option>
-                    <option value="soldier">Soldier</option>
-                    <option value="urchin">Urchin</option>
-                    <option value="custom">Custom</option>
+                    <option value="No Background">No Background</option>
+                    <option value="Acolyte">Acolyte</option>
+                    <option value="Charlatan">Charlatan</option>
+                    <option value="Criminal">Criminal</option>
+                    <option value="Entertainer">Entertainer</option>
+                    <option value="Folk-hero">Folk Hero</option>
+                    <option value="Guild-artisan">Guild Artisan</option>
+                    <option value="Hermit">Hermit</option>
+                    <option value="Noble">Noble</option>
+                    <option value="Outlander">Outlander</option>
+                    <option value="Sage">Sage</option>
+                    <option value="Sailor">Sailor</option>
+                    <option value="Soldier">Soldier</option>
+                    <option value="Urchin">Urchin</option>
+                    <option value="Custom">Custom</option>
                 </select>
             </label>
             <div class="inline">
@@ -123,26 +123,27 @@
 
                 <div>
                     <p class="instructions">Manually Assign Ability Scores: </p>
+                    <p>Point Buy Points Remaining: <em id="points-remaining">##</em></p>
                     <div class="flex">
-                        <label>Strength: <input type="number" min="1" max="18" placeholder="0"/></label>
-                        <label>Dexterity: <input type="number" min="1" max="18" placeholder="0"/></label>
+                        <label>Strength: <input     type="number" min="1" max="18" placeholder="0"/></label>
+                        <label>Dexterity: <input    type="number" min="1" max="18" placeholder="0"/></label>
                         <label>Constitution: <input type="number" min="1" max="18" placeholder="0"/></label>
                         <label>Intelligence: <input type="number" min="1" max="18" placeholder="0"/></label>
-                        <label>Wisdom: <input type="number" min="1" max="18" placeholder="0"/></label>
-                        <label>Charisma: <input type="number" min="1" max="18" placeholder="0"/></label>
-                        <input type="button" value="Update" />
+                        <label>Wisdom: <input       type="number" min="1" max="18" placeholder="0"/></label>
+                        <label>Charisma: <input     type="number" min="1" max="18" placeholder="0"/></label>
                     </div>
                 </div>
             </div>
 
-            <div class="substep">
-                <h3>Step 2.2</h3>
+            <div class="substep" name="step-2b">
+                <h3>Step 2b</h3>
                 <p>Now we'll add in the bonuses you get from your character race and level.</p>
-                <p>Since you chose ################# as your race you get: JS OUTPUT RACIAL ABILITY SCORE BONUSES</p>
+                <p class="inline">Since you chose <p id="character-race-output-2b" class="inline">##########</p> as your race you get: <em id="racial-bonus-output-step-2-2">JS OUTPUT RACIAL ABILITY SCORE BONUSES</em></p>
                 <p>In D&D, at levels 4, 8, 12, 16, and 19, you get some nifty bonuses along with your normal level up. At each of these levels, you are awarded two "Ability Score Bonus Points" which can be added to whichever Ability Score you desire. The only rule is that you are not allowed to go above 20 this way.</p>
-                <p>Because D&D hates you, there is exactly one exception. Fighters get an additional 2 bonus points at levels 6 and 14. Don't ask me why. It's probably because they suck.</p>
+                <p>Because D&D hates you, there is exactly one exception. Fighters get an additional 2 bonus points at levels 6 and 14. Don't ask me why. It's probably because fighters suck.</p>
                 <p>For example, a level 5 character is at least level 4, so they get 2 Bonus Points. A level 17 character gets 8.</p>
-                <p>Since you are level ##, you get ## bonus points to add to your ability scores which you can assign any way you want. You may also exchange 2 bonus points for a feat instead. If you do this, don't forget to add your new feat to your character sheet!</p>
+                <p>Since you are level <em id="character-level-in-step-2.2">##</em>, you get <em id="character-bonus-points-in-step-2.2">##</em> bonus points to add to your ability scores which you can assign any way you want. You may also exchange 2 bonus points for a feat instead. If you do this, don't forget to add your new feat to your character sheet!</p>
+                <p>How many feats you may take: <em id="max-feats-allowed">##</em></p>
                 <label>How many feats you took:
                     <input type="number" min="0" max="4" placeholder="0"/>
                 </label>
@@ -156,38 +157,32 @@
                     <label>Charisma: <input type="number" min="1" max="10" placeholder="0"/></label>
                     <input type="button" value="Update" />
                 </div>
+
+                <div>
+                    <p>Feedback from Bonus Point Allocation</p>
+                </div>
                 
             </div>
 
-            <div class="substep">
+            <div class="substep" name="step-2.3">
                 <h3>Step 2.3</h3>
                 <p>Finally, after all of that, these are the numbers you should copy onto your character sheet: </p>
                 <div class="ability-scores">
-                    <div class="grid-item str">Strength</div>
-                    <div class="grid-item dex">Dexterity</div>
-                    <div class="grid-item con">Constitution</div>
-                    <div class="grid-item int">Intelligence</div>
-                    <div class="grid-item wis">Wisdom</div>
-                    <div class="grid-item cha">Charisma</div>
-                    <div class="grid-item str-mod">Strength Modifier</div>
-                    <div class="grid-item dex-mod">Dexterity Modifier</div>
-                    <div class="grid-item con-mod">Constitution Modifier</div>
-                    <div class="grid-item int-mod">Intelligence Modifier</div>
-                    <div class="grid-item wis-mod">Wisdom Modifier</div>
-                    <div class="grid-item cha-mod">Charisma Modifier</div>
+                    <div class="grid-item str">STR</div>
+                    <div class="grid-item dex">DEX</div>
+                    <div class="grid-item con">CON</div>
+                    <div class="grid-item int">INT</div>
+                    <div class="grid-item wis">WIS</div>
+                    <div class="grid-item cha">CHA</div>
+                    <div class="grid-item str-mod">STR MOD</div>
+                    <div class="grid-item dex-mod">DEX MOD</div>
+                    <div class="grid-item con-mod">CON MOD</div>
+                    <div class="grid-item int-mod">INT MOD</div>
+                    <div class="grid-item wis-mod">WIS MOD</div>
+                    <div class="grid-item cha-mod">CHA MOD</div>
                 </div>
                 <p class="small-print">*Modifiers are taken from a table located <a href="https://www.dndbeyond.com/sources/basic-rules/step-by-step-characters#AbilityScoresandModifiers">here</a></p>
                 <p>Until I learn JavaScript and can make the above feature useful, you can use these to hold onto your numbers: </p>
-                <div class="flex">
-                    <label>Strength: <input type="number" min="1" max="20" placeholder="0"/></label>
-                    <label>Dexterity: <input type="number" min="1" max="20" placeholder="0"/></label>
-                    <label>Constitution: <input type="number" min="1" max="20" placeholder="0"/></label>
-                    <label>Intelligence: <input type="number" min="1" max="20" placeholder="0"/></label>
-                    <label>Wisdom: <input type="number" min="1" max="20" placeholder="0"/></label>
-                    <label>Charisma: <input type="number" min="1" max="20" placeholder="0"/></label>
-                    <input type="button" value="Update" />
-                </div>
-                <p>Use the table <a href="https://www.dndbeyond.com/sources/basic-rules/step-by-step-characters#AbilityScoresandModifiers">here</a>to get your modifiers. I can't be bothered to do the copy/paste for you.</p>
             </div>
 
         </fieldset>
