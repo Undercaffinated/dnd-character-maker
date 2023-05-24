@@ -58,7 +58,7 @@
                 </select>
             </label>
             <label class="basic-info">Character Level: 
-                <input type="number" id="character-level" min="1" max="20" placeholder="1" onchange="handleCharacterLevelChange()">
+                <input type="number" id="character-level" min="1" max="20" value="1" onchange="handleCharacterLevelChange()">
             </label>
 
             <!--Character Background - p.125 Player's Handbook-->
@@ -92,7 +92,7 @@
         </fieldset>
 
 
-        <!-- Step 2 -->
+<!-- Step 2 -->
         <fieldset class="stats">
             <h2>Step 2: Ability Scores and Ability Modifiers</h2>
             <p class="instructions">This section will help you determine what your character's ability scores should be.</p>
@@ -120,15 +120,15 @@
                     <!-- Point-Buy -->
                     <div class="flex-column bordered ability-score-method">
                         <strong>Point Buy</strong>
-                        <p>##</p> <!-- Displays Remaining Points -->
+                        <p id="point-buy-text-output">##</p> <!-- Displays Remaining Points -->
                         <p>Points Remaining<p>
                         <div class="flex-column" style="font-family: mono">
-                            <label>STR: <input type="number" min="8" max="15" placeholder="8" onchange="handlePointBuyStatChange()"/></label>
-                            <label>DEX: <input type="number" min="8" max="15" placeholder="8" onchange="handlePointBuyStatChange()"/></label>
-                            <label>CON: <input type="number" min="8" max="15" placeholder="8" onchange="handlePointBuyStatChange()"/></label>
-                            <label>INT: <input type="number" min="8" max="15" placeholder="8" onchange="handlePointBuyStatChange()"/></label>
-                            <label>WIS: <input type="number" min="8" max="15" placeholder="8" onchange="handlePointBuyStatChange()"/></label>
-                            <label>CHA: <input type="number" min="8" max="15" placeholder="8" onchange="handlePointBuyStatChange()"/></label>
+                            <label>STR: <input id="pb-str" type="number" min="8" max="15" value="8" onchange="_handlePointBuyStatChange()"/></label>
+                            <label>DEX: <input id="pb-dex" type="number" min="8" max="15" value="8" onchange="_handlePointBuyStatChange()"/></label>
+                            <label>CON: <input id="pb-con" type="number" min="8" max="15" value="8" onchange="_handlePointBuyStatChange()"/></label>
+                            <label>INT: <input id="pb-int" type="number" min="8" max="15" value="8" onchange="_handlePointBuyStatChange()"/></label>
+                            <label>WIS: <input id="pb-wis" type="number" min="8" max="15" value="8" onchange="_handlePointBuyStatChange()"/></label>
+                            <label>CHA: <input id="pb-cha" type="number" min="8" max="15" value="8" onchange="_handlePointBuyStatChange()"/></label>
                         </div>
                     </div>
 
@@ -140,17 +140,29 @@
                     </div>
                 </div>
 
-                <div>
-                <!-- This is where the manual assign dropdowns will go. -->
+                <hr>
+
+                <div class="flex-column" style="justify-content: space-around, align-items: center">
                 <p>Enter the number you generated here. If anything looks wrong, now's the time to fix it.</p>
+                    <div class="flex-column">
+                        <p>Your Ability Scores so far:</p>
+                        <div class="flex-column" style="font-family: mono">
+                            <label>STR: <input id="2a-final-str" type="number" min"0" max="18" value="0"/></label>   
+                            <label>DEX: <input id="2a-final-dex" type="number" min"0" max="18" value="0"/></label>   
+                            <label>CON: <input id="2a-final-con" type="number" min"0" max="18" value="0"/></label>   
+                            <label>INT: <input id="2a-final-int" type="number" min"0" max="18" value="0"/></label>   
+                            <label>WIS: <input id="2a-final-wis" type="number" min"0" max="18" value="0"/></label>   
+                            <label>CHA: <input id="2a-final-cha" type="number" min"0" max="18" value="0"/></label>   
+                        </div>
+                    </div>
                 </div>
             </div>
 
 
             <!-- Step 2b -->
             <div class="substep" name="step-2b">
-                <h3>Step 2b: Apply Race and Class Bonuses</h3>
-                <p>Now we'll add in the bonuses you get from your character race and level.</p>
+                <h3>Step 2b: Apply Ability Score Bonuses</h3>
+                <p>Now we'll add in the bonuses you get from your character's race, class, and level.</p>
 		<div>Since you chose <p id="character-race-output-2b" class="inline">##########</p> as your race you get these bonus points:</p>
 			<p class="inline">Strength: +<p id="str-output-2b" class="inline">####</p></p>
 			<p class="inline">Dexterity: +<p id="dex-output-2b" class="inline">####</p></p>
@@ -177,11 +189,9 @@
                     <label>Charisma: <input type="number" min="1" max="10" placeholder="0"/></label>
                     <input type="button" value="Update" />
                 </div>
-
                 <div>
                     <p>Feedback from Bonus Point Allocation</p>
                 </div>
-                
             </div>
 
             <div class="substep" name="step-2.3">
@@ -245,6 +255,7 @@
     <script src="javascript/finishForMe.js"></script>
     <script src="javascript/handleRollSystemChange.js"></script>
     <script src="javascript/makeAbilityScoreRoll.js"></script>
+    <script src="javascript/handlePointBuyStatChange.js"></script>
 </body>
                    
 
