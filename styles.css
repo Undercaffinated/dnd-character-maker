@@ -17,13 +17,21 @@ h2 {
 
 h3 {
     margin-top: -5px;
-}
+
+.ability-score-generation-method {
+    display: block;
+}}
 
 .basic-info {
     display: block;
     text-align: left;
     margin: 1em;
 }
+
+.bordered {
+    border: 2px solid #303030;
+}
+
 
 .inline {
     display: inline;
@@ -46,6 +54,11 @@ h3 {
     margin: auto;
 }
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
 .ability-scores {
     display: grid;
     width: 90%;
@@ -57,6 +70,11 @@ h3 {
     border: 3px solid white;
     margin: 50px auto;
 }
+
+.ability-score-method {
+    align-items: center;
+    justify-content: space-between;r
+}r
 
 .small-print {
     font-size: .8rem;

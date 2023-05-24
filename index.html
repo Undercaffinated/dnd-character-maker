@@ -91,58 +91,74 @@
             </p>
         </fieldset>
 
+
+        <!-- Step 2 -->
         <fieldset class="stats">
-            <h2>Step 2: Ability Scores</h2>
+            <h2>Step 2: Ability Scores and Ability Modifiers</h2>
             <p class="instructions">This section will help you determine what your character's ability scores should be.</p>
+
+            <!-- Step 2a, but good -->
             <div class="substep">
-                <h3>Step 2.1</h3>
-                <p class="instructions">Choose one of the below methods to determine level 1 ability scores. For more info, <a href="https://www.dndbeyond.com/sources/basic-rules/step-by-step-characters#3DetermineAbilityScores">Click Here</a></p>
-                <div class="inline">
-                    <label for="roll-system">Rolling Dice: 
-                        <select id="roll-system" name="roll-system" onchange="handleRollSystemChange()">
-                            <option id="harsh-roll" value="harsh-roll">Harsh Roll (3d6)</option>
-                            <option id="standard-roll" value="standard-roll">Standard Roll (4d6 - Lowest)</option>
-                            <option id="carolyne-roll" value="carolyne-roll">Carolyne Roll (5d6 - Lowest Two)</option>
-                        </select>
-                    </label>
-        
-                    <label for="roll-button">
-                        <input type="button" id="roll-button" value="Roll!" onclick="makeAbilityScoreRoll()"/>
-                    </label>
-                    <label for="roll-results">Roll Results: <p class="inline" id="roll-results">OUTPUT OF ROLL</p></label>
-                </div>
-
-                <div>
-                    <p>Standard Spread: 15, 14, 13, 12, 10, 8</p>
-                    <!--
-                        <option value="standard-spread">Standard Spread</option>
-                        <option value="point-buy">Point Buy</option>
-                        <option value="custom">Manually Assign</option>
-                    -->
-                </div>
-
-                <div>
-                    <p>Point-Buy: To use the Point-Buy system, set all of the values in the "Manually Assign Ability Scores boxes to 8. According to <a href="https://www.dndbeyond.com/sources/basic-rules/step-by-step-characters#AbilityScorePointCost">D&D Beyond</a> you get 27 points to spend on upgrading your scores. Each ability score increase above 8 costs one point and each ability score increase above 13 costs two. You are only allowed to go up to a score of 15 this way.</p>
-                </div>
-
-                <div>
-                    <p class="instructions">Manually Assign Ability Scores: </p>
-                    <p>Point Buy Points Remaining: <em id="points-remaining">##</em></p>
-                    <div class="flex">
-                        <label>Strength: <input     type="number" min="1" max="18" placeholder="0"/></label>
-                        <label>Dexterity: <input    type="number" min="1" max="18" placeholder="0"/></label>
-                        <label>Constitution: <input type="number" min="1" max="18" placeholder="0"/></label>
-                        <label>Intelligence: <input type="number" min="1" max="18" placeholder="0"/></label>
-                        <label>Wisdom: <input       type="number" min="1" max="18" placeholder="0"/></label>
-                        <label>Charisma: <input     type="number" min="1" max="18" placeholder="0"/></label>
+                <h3>Step 2a: Generate Base Ability Scores</h3>
+                <p class="instructions">Choose one method. Once you've generated some numbers, put them into the dropdown boxes below.</p>
+                <div class="flex">
+                    <!-- Roll Dice -->
+                    <div class="bordered flex-column ability-score-method">
+                        <strong>Roll Dice</strong>
+                        <div class="flex-column ability-score-method">
+                            <p>Choose a roll method:</p>
+                            <select id="roll-system" name="roll-system" onchange="handleRollSystemChange()">
+                                <option id="harsh-roll" value="harsh-roll">Harsh Roll (3d6)</option>
+                                <option id="standard-roll" value="standard-roll">Standard Roll (4d6 - Lowest)</option>
+                                <option id="carolyne-roll" value="carolyne-roll">Carolyne Roll (5d6 - Lowest Two)</option>
+                            </select>
+                        </div>
+                        <label for="roll-button"><input type="button" id="roll-button" value="Roll!" onclick="makeAbilityScoreRoll()"/></label>
+                        <label for="roll-results">Roll Results: <p class="inline" id="roll-results">OUTPUT OF ROLL</p></label>
                     </div>
+
+                    <!-- Point-Buy -->
+                    <div class="flex-column bordered ability-score-method">
+                        <strong>Point Buy</strong>
+                        <p>##</p> <!-- Displays Remaining Points -->
+                        <p>Points Remaining<p>
+                        <div class="flex-column" style="font-family: mono">
+                            <label>STR: <input type="number" min="8" max="15" placeholder="8" onchange="handlePointBuyStatChange()"/></label>
+                            <label>DEX: <input type="number" min="8" max="15" placeholder="8" onchange="handlePointBuyStatChange()"/></label>
+                            <label>CON: <input type="number" min="8" max="15" placeholder="8" onchange="handlePointBuyStatChange()"/></label>
+                            <label>INT: <input type="number" min="8" max="15" placeholder="8" onchange="handlePointBuyStatChange()"/></label>
+                            <label>WIS: <input type="number" min="8" max="15" placeholder="8" onchange="handlePointBuyStatChange()"/></label>
+                            <label>CHA: <input type="number" min="8" max="15" placeholder="8" onchange="handlePointBuyStatChange()"/></label>
+                        </div>
+                    </div>
+
+                    <!-- Standard Spread -->
+                    <div class="flex-column bordered ability-score-method">
+                        <strong>Standard Spread</strong>
+                        <p>Enter these numbers below:</p>
+                        <p>15, 14, 13, 12, 10, 8</p>
+                    </div>
+                </div>
+
+                <div>
+                <!-- This is where the manual assign dropdowns will go. -->
+                <p>Enter the number you generated here. If anything looks wrong, now's the time to fix it.</p>
                 </div>
             </div>
 
+
+            <!-- Step 2b -->
             <div class="substep" name="step-2b">
-                <h3>Step 2b</h3>
+                <h3>Step 2b: Apply Race and Class Bonuses</h3>
                 <p>Now we'll add in the bonuses you get from your character race and level.</p>
-                <p class="inline">Since you chose <p id="character-race-output-2b" class="inline">##########</p> as your race you get: <em id="racial-bonus-output-step-2-2">JS OUTPUT RACIAL ABILITY SCORE BONUSES</em></p>
+		<div>Since you chose <p id="character-race-output-2b" class="inline">##########</p> as your race you get these bonus points:</p>
+			<p class="inline">Strength: +<p id="str-output-2b" class="inline">####</p></p>
+			<p class="inline">Dexterity: +<p id="dex-output-2b" class="inline">####</p></p>
+			<p class="inline">Constitution: +<p id="con-output-2b" class="inline">####</p></p>
+			<p class="inline">Intelligence: +<p id="int-output-2b" class="inline">####</p></p>
+			<p class="inline">Wisdom: +<p id="wis-output-2b" class="inline">####</p></p>
+			<p class="inline">Charisma: +<p id="cha-output-2b" class="inline">####</p></p>
+		</div>
                 <p>In D&D, at levels 4, 8, 12, 16, and 19, you get some nifty bonuses along with your normal level up. At each of these levels, you are awarded two "Ability Score Bonus Points" which can be added to whichever Ability Score you desire. The only rule is that you are not allowed to go above 20 this way.</p>
                 <p>Because D&D hates you, there is exactly one exception. Fighters get an additional 2 bonus points at levels 6 and 14. Don't ask me why. It's probably because fighters suck.</p>
                 <p>For example, a level 5 character is at least level 4, so they get 2 Bonus Points. A level 17 character gets 8.</p>
@@ -187,8 +203,6 @@
                 </div>
                 <p class="small-print">*Modifiers are taken from a table located <a href="https://www.dndbeyond.com/sources/basic-rules/step-by-step-characters#AbilityScoresandModifiers">here</a></p>
                 <p>Until I learn JavaScript and can make the above feature useful, you can use these to hold onto your numbers: </p>
-            </div>
-
         </fieldset>
 
         <fieldset>
