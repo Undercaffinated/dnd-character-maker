@@ -159,38 +159,37 @@
             </div>
 
 
-            <!-- Step 2b -->
+        <!-- Step 2b -->
             <div class="substep" name="step-2b">
                 <h3>Step 2b: Apply Ability Score Bonuses</h3>
                 <p>Now we'll add in the bonuses you get from your character's race, class, and level.</p>
-		<div>Since you chose <p id="character-race-output-2b" class="inline">##########</p> as your race you get these bonus points:</p>
-			<p class="inline">Strength: +<p id="str-output-2b" class="inline">####</p></p>
-			<p class="inline">Dexterity: +<p id="dex-output-2b" class="inline">####</p></p>
-			<p class="inline">Constitution: +<p id="con-output-2b" class="inline">####</p></p>
-			<p class="inline">Intelligence: +<p id="int-output-2b" class="inline">####</p></p>
-			<p class="inline">Wisdom: +<p id="wis-output-2b" class="inline">####</p></p>
-			<p class="inline">Charisma: +<p id="cha-output-2b" class="inline">####</p></p>
-		</div>
+		        <p>Since you chose <em id="character-race-output-2b">##########</em> as your race you get: <em id="racialBonusSummary">Bonus Summary</em></p>
+		        <p>Which raises your Ability Scores to:</p>
+		        <div class="flex">
+			        <p class="inline">Strength: +<p id="str-output-2b" class="inline">####</p></p>
+			        <p class="inline">Dexterity: +<p id="dex-output-2b" class="inline">####</p></p>
+			        <p class="inline">Constitution: +<p id="con-output-2b" class="inline">####</p></p>
+			        <p class="inline">Intelligence: +<p id="int-output-2b" class="inline">####</p></p>
+			        <p class="inline">Wisdom: +<p id="wis-output-2b" class="inline">####</p></p>
+			        <p class="inline">Charisma: +<p id="cha-output-2b" class="inline">####</p></p>
+			        <p class="inline">Unassigned <p id="un-output-2b" class="inline">####</p></p>
+		        </div>
+
                 <p>In D&D, at levels 4, 8, 12, 16, and 19, you get some nifty bonuses along with your normal level up. At each of these levels, you are awarded two "Ability Score Bonus Points" which can be added to whichever Ability Score you desire. The only rule is that you are not allowed to go above 20 this way.</p>
                 <p>Because D&D hates you, there is exactly one exception. Fighters get an additional 2 bonus points at levels 6 and 14. Don't ask me why. It's probably because fighters suck.</p>
                 <p>For example, a level 5 character is at least level 4, so they get 2 Bonus Points. A level 17 character gets 8.</p>
                 <p>Since you are level <em id="character-level-in-step-2.2">##</em>, you get <em id="character-bonus-points-in-step-2.2">##</em> bonus points to add to your ability scores which you can assign any way you want. You may also exchange 2 bonus points for a feat instead. If you do this, don't forget to add your new feat to your character sheet!</p>
                 <p>How many feats you may take: <em id="max-feats-allowed">##</em></p>
-                <label>How many feats you took:
-                    <input type="number" min="0" max="4" placeholder="0"/>
-                </label>
+                <label>How many feats you took: <input type="number" min="0" max="4" value="0"/></label>
                 <p>Use these boxes to allot your bonus points:</p>
-                <div class="flex">
-                    <label>Strength: <input type="number" min="1" max="10" placeholder="0"/></label>
-                    <label>Dexterity: <input type="number" min="1" max="10" placeholder="0"/></label>
-                    <label>Constitution: <input type="number" min="1" max="10" placeholder="0"/></label>
-                    <label>Intelligence: <input type="number" min="1" max="10" placeholder="0"/></label>
-                    <label>Wisdom: <input type="number" min="1" max="10" placeholder="0"/></label>
-                    <label>Charisma: <input type="number" min="1" max="10" placeholder="0"/></label>
+                <div class="flex-column">
+                    <label>Strength: <input type="number" min="1" max="10" value="0"/></label>
+                    <label>Dexterity: <input type="number" min="1" max="10" value="0"/></label>
+                    <label>Constitution: <input type="number" min="1" max="10" value="0"/></label>
+                    <label>Intelligence: <input type="number" min="1" max="10" value="0"/></label>
+                    <label>Wisdom: <input type="number" min="1" max="10" value="0"/></label>
+                    <label>Charisma: <input type="number" min="1" max="10" value="0"/></label>
                     <input type="button" value="Update" />
-                </div>
-                <div>
-                    <p>Feedback from Bonus Point Allocation</p>
                 </div>
             </div>
 
@@ -213,6 +212,7 @@
                 </div>
                 <p class="small-print">*Modifiers are taken from a table located <a href="https://www.dndbeyond.com/sources/basic-rules/step-by-step-characters#AbilityScoresandModifiers">here</a></p>
                 <p>Until I learn JavaScript and can make the above feature useful, you can use these to hold onto your numbers: </p>
+            </div>
         </fieldset>
 
         <fieldset>
@@ -248,6 +248,8 @@
 
     <footer>
     </footer>
+    <script src="init.js"></script>
+    <script src="reference-objects.js"></script>
     <script src="javascript/handleCharacterClassChange.js"></script>
     <script src="javascript/handleCharacterRaceChange.js"></script>
     <script src="javascript/handleCharacterLevelChange.js"></script>

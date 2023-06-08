@@ -1,12 +1,6 @@
 In no particular order:
 
 
-- When the roll button in Step 2.1 is clicked, the numbers generated should
-auto-populate the stat dropdowns in Step 2.1
-
-
-- Change the names of steps from #.# to #.{a-z}
-
 - Step 2.1: Write a js function that can calculate based on some Ability Score
 array the correct number of Point Buy Points remain.
     - Implement this solution so that it updates the textContent of
