@@ -12,15 +12,6 @@ function _handlePointBuyStatChange() {
   pointBuyStats[4] = Number(document.getElementById("pb-wis").value);
   pointBuyStats[5] = Number(document.getElementById("pb-cha").value);
 
-  for (let i = 0; i < 6; i++) {
-    console.log(
-      "pointBuyStats Info: ",
-      i,
-      typeof (pointBuyStats[i]),
-      pointBuyStats[i],
-    );
-  }
-
   // Correct illegal inputs
   for (let i = 0; i < pointBuyStats.length; i++) {
     if (pointBuyStats[i] > 15 || pointBuyStats[i] < 8) {

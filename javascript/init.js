@@ -1,10 +1,10 @@
 const sessionData = {
   playerName: "",
   characterName: "",
-  characterClass: "",
-  characterRace: "",
-  characterLevel: "",
-  characterBackground: "",
+  characterClass: document.getElementById("character-class").value,
+  characterRace: document.getElementById("character-race").value,
+  characterLevel: Number(document.getElementById("character-level").value),
+  characterBackground: document.getElementById("character-background"),
   characterAbilityScores: [0, 0, 0, 0, 0, 0],
   characterAbilityModifiers: [0, 0, 0, 0, 0, 0],
   racialBonuses: [0, 0, 0, 0, 0, 0, 0],
@@ -16,7 +16,8 @@ const sessionData = {
   speed: 0,
   hitPointMaximum: 0,
   hitDice: "0",
-  upgradesAvailable: 0,
+  maxUpgradesAllowed: 0,
+  featsTaken: 0,
 
   // 0 = No Proficiency, 1 = Proficient, 2 = Expertise
   characterSkills: {
@@ -61,8 +62,6 @@ const sessionData = {
   step2aAbilityScores: [0, 0, 0, 0, 0, 0],
 
   // [STR, DEX, CON, INT, WIS, CHA, Unassigned]
-  step2bAvailableUpgrades: 0,
-  step2bFeatsTaken: 0,
   step2bBonusAbilityScoreAllocation: [0, 0, 0, 0, 0, 0],
 };
 

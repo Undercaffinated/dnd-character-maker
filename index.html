@@ -22,6 +22,7 @@
             <!--Character Class-->
             <label class="basic-info" for="character-class">Character Class: 
                 <select id="character-class" name="character-class" onchange="handleCharacterClassChange()">
+                    <option value="Select-One">Select One</option>
                     <option value="Artificer">Artificer</option>
                     <option value="Barbarian">Barbarian</option>
                     <option value="Bard">Bard</option>
@@ -41,6 +42,7 @@
             <!--Character Race-->
             <label class="basic-info" for="character-race">Character Race: 
                 <select id="character-race" name="character-race" onchange="handleCharacterRaceChange()">
+                    <option value="Select-One">Select One</option>
                     <option value="Dragonborn">Dragonborn</option>
                     <option value="Dwarf (Hill)">Dwarf (Hill)</option>
                     <option value="Dwarf (Mountain)">Dwarf (Mountain)</option>
@@ -163,33 +165,24 @@
             <div class="substep" name="step-2b">
                 <h3>Step 2b: Apply Ability Score Bonuses</h3>
                 <p>Now we'll add in the bonuses you get from your character's race, class, and level.</p>
-		        <p>Since you chose <em id="character-race-output-2b">##########</em> as your race you get: <em id="racialBonusSummary">Bonus Summary</em></p>
-		        <p>Which raises your Ability Scores to:</p>
-		        <div class="flex">
-			        <p class="inline">Strength: +<p id="str-output-2b" class="inline">####</p></p>
-			        <p class="inline">Dexterity: +<p id="dex-output-2b" class="inline">####</p></p>
-			        <p class="inline">Constitution: +<p id="con-output-2b" class="inline">####</p></p>
-			        <p class="inline">Intelligence: +<p id="int-output-2b" class="inline">####</p></p>
-			        <p class="inline">Wisdom: +<p id="wis-output-2b" class="inline">####</p></p>
-			        <p class="inline">Charisma: +<p id="cha-output-2b" class="inline">####</p></p>
-			        <p class="inline">Unassigned <p id="un-output-2b" class="inline">####</p></p>
-		        </div>
-
+		        <p>Since you chose <em id="character-race-output-2b">##########</em> as your race you get: <em id="racial-bonus-summary">Bonus Summary</em></p>
                 <p>In D&D, at levels 4, 8, 12, 16, and 19, you get some nifty bonuses along with your normal level up. At each of these levels, you are awarded two "Ability Score Bonus Points" which can be added to whichever Ability Score you desire. The only rule is that you are not allowed to go above 20 this way.</p>
                 <p>Because D&D hates you, there is exactly one exception. Fighters get an additional 2 bonus points at levels 6 and 14. Don't ask me why. It's probably because fighters suck.</p>
                 <p>For example, a level 5 character is at least level 4, so they get 2 Bonus Points. A level 17 character gets 8.</p>
                 <p>Since you are level <em id="character-level-in-step-2.2">##</em>, you get <em id="character-bonus-points-in-step-2.2">##</em> bonus points to add to your ability scores which you can assign any way you want. You may also exchange 2 bonus points for a feat instead. If you do this, don't forget to add your new feat to your character sheet!</p>
-                <p>How many feats you may take: <em id="max-feats-allowed">##</em></p>
-                <label>How many feats you took: <input type="number" min="0" max="4" value="0"/></label>
+                <p>Number of Available Upgrades: <em id="max-upgrades-allowed-2b">##</em></p> 
+                <p>Max Feats you may take: <em id="max-feats-allowed-2b">##</em></p>
+                <p>Max Bonus Ability Score Allocation: <em id="max-bonus-allocations-2b">##</em></p>
+                <label>How many feats you took: <input id="number-feats-taken" type="number" min="0" max="4" value="0" onchange="handleNumberFeatsTakenChange()"/></label>
+                <p>Remaining Bonus Points to Allocate: <em id="remaining-bonus-points-2b">##</em></p> 
                 <p>Use these boxes to allot your bonus points:</p>
                 <div class="flex-column">
-                    <label>Strength: <input type="number" min="1" max="10" value="0"/></label>
-                    <label>Dexterity: <input type="number" min="1" max="10" value="0"/></label>
-                    <label>Constitution: <input type="number" min="1" max="10" value="0"/></label>
-                    <label>Intelligence: <input type="number" min="1" max="10" value="0"/></label>
-                    <label>Wisdom: <input type="number" min="1" max="10" value="0"/></label>
-                    <label>Charisma: <input type="number" min="1" max="10" value="0"/></label>
-                    <input type="button" value="Update" />
+                    <label>Strength: <input type="number" min="0" max="10" value="0"/></label>
+                    <label>Dexterity: <input type="number" min="0" max="10" value="0"/></label>
+                    <label>Constitution: <input type="number" min="0" max="10" value="0"/></label>
+                    <label>Intelligence: <input type="number" min="0" max="10" value="0"/></label>
+                    <label>Wisdom: <input type="number" min="0" max="10" value="0"/></label>
+                    <label>Charisma: <input type="number" min="0" max="10" value="0"/></label>
                 </div>
             </div>
 
@@ -251,6 +244,7 @@
     <script src="javascript/init.js"></script>
     <script src="javascript/references.js"></script>
     <script src="javascript/handlers.js"></script>
+    <script src="javascript/calc.js"></script>
     <script src="javascript/handleCharacterRaceChange.js"></script>
     <script src="javascript/finishForMe.js"></script>
     <script src="javascript/makeAbilityScoreRoll.js"></script>
@@ -259,5 +253,3 @@
                    
 
 </html>
-
-
