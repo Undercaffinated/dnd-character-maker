@@ -1,5 +1,5 @@
 // raceSubrace: [STR, DEX, CON, INT, WIS, CHA, Unassigned Extra]
-const racialBonuses = {
+const refRacialBonuses = {
   dragonborn: [2, 0, 0, 0, 0, 1, 0],
   dwarfHill: [0, 0, 2, 0, 1, 0, 0],
   dwarfMountain: [2, 0, 2, 0, 0, 0, 0],

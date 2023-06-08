@@ -7,6 +7,7 @@ const sessionData = {
   characterBackground: "",
   characterAbilityScores: [0, 0, 0, 0, 0, 0],
   characterAbilityModifiers: [0, 0, 0, 0, 0, 0],
+  racialBonuses: [0, 0, 0, 0, 0, 0, 0],
   passivePerception: 0,
   savingThrows: [false, false, false, false, false, false],
   savingThrowValues: [0, 0, 0, 0, 0, 0],
@@ -60,7 +61,6 @@ const sessionData = {
   step2aAbilityScores: [0, 0, 0, 0, 0, 0],
 
   // [STR, DEX, CON, INT, WIS, CHA, Unassigned]
-  step2bRacialBonuses: [0, 0, 0, 0, 0, 0, 0],
   step2bAvailableUpgrades: 0,
   step2bFeatsTaken: 0,
   step2bBonusAbilityScoreAllocation: [0, 0, 0, 0, 0, 0],

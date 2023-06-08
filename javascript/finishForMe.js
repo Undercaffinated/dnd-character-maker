@@ -1,3 +1,3 @@
 function finishForMe() {
-    console.log("finishForMe.js loaded")
+    console.log("Do it yourself.")
 }
