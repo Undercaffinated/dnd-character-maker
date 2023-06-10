@@ -1,14 +1,17 @@
-- Step 2.1: Write a js function that can calculate based on some Ability Score
-array the correct number of Point Buy Points remain.
-    - Implement this solution so that it updates the textContent of
-    "Point-Buy-Points-Remaining" element in step 2.1
+THE TO-DO LIST
+
+SPECIFIC
+- Polish up step 2b so that the value of Remaining Bonus Points decreases when players allocate bonus points.
+
+ABSTRACT
+- Work to improve the modularity of the codebase, especially functions.
+- Consider breaking up files like make.js into individual files per function, then putting those functions into subdirectories of javascript.
+    - Ensure before doing this that index.html can in fact call a whole directory to be loaded.
+    OR
+    - Find a better way to load a jillion files without having to make a new html line for each.
+
+ACQUIRE KNOWLEDGE
 
 
-    - Design a js func that takes in a character level and class and outputs
-    the number of bonus points they should be able to add to their character's
-    stats and how many feats they can afford.
-
-    - Design a function that takes in the total number of bonus points a player
-    should be able to allocate to stats and the number of feats they  have
-    taken, and return both the number of bonus points they can still allocate
-    and/or the number of feats they can take.
+FOR VERSION 2
+- Rewrite the whole thing as a webapp in Rust.
