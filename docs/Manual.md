@@ -29,6 +29,27 @@ The page is designed to be responsive to users going step-by-step through the pa
 1. I use init.js to create a large object called sessionData that keeps track of all the variables that will be needed. This allows functions and elements to refer to a single place and find the data required.
     - The **sessionData** object is stored in Session Storage. I made this decision because I don't want clutter on the server and I see no reason to have data persist beyond a user leaving the site. Utilizing Session Storage seemed like the best approach.
 
-2. **references.js** is a second file I use to keep track of reference values for things like what bonuses characters get for their race, etc. I plan to utilize this file later for other purposes like maintaining a list of spells, etc., but other methods may be used.
+2. The elements and scripts within the page are structured sequentially.
+    - Elements and their scripts located further down the page often rely on previous elements being performed as intended. Otherwise they may behave in unexpected ways.
+
+
+## Naming Things
+
+I realize that I suck at naming things. That said, I've tried to maintain at least a few standards:
+
+1. I use dashed names for element IDs. Ex: "bonus-points-remaining-2b"
+2. I use camel case for function and variable names.
+3. Names should be descriptive and should include the step they relate to if the name would otherwise be confusing.
+
+
+## Objects and Functions in Depth
+
+### Finish For Me
+
+Related: Finish for Me <button>, finishForMe.js, finishForMe().
+
+#### Usage
+
+Once completed, when this button is clicked, it will randomly generate a character based on class, race, level, and background, and will update all the relevant fields on the page and all relevant properties of the sessionData object. Additionally, if the feature to export the created character is implemented, the Finish For Me button should open a dialogue allowing the player to print out the created character.
 
 
